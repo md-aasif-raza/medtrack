@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MedTrack Pro — Medicine & Health Tracker</title>
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="cursor"></div>
+<div id="cring"></div>
+
+<div class="bg-mesh">
+  <div class="mo mo1"></div><div class="mo mo2"></div>
+  <div class="mo mo3"></div><div class="mo mo4"></div>
+</div>
+<div class="bg-grid"></div>
+
+<nav>
+  <div class="logo">
+    <div class="logo-ico">💊</div>
+    <span>MedTrack Pro</span>
+  </div>
+  <div class="nav-links">
+    <a href="#features">Features</a>
+    <a href="#medicine">Medicine</a>
+    <a href="#health">Health</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#oop">OOP</a>
+  </div>
+  <button class="nav-cta" onclick="go('medicine')">+ Add Medicine</button>
+</nav>
+
+<div class="page">
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hi">
+    <div class="fu">
+      <div class="hero-tag"><span class="dot"></span>BCA Data Science · C++ OOPs Project</div>
+      <h1>Track Your<br><span class="hl2">Medicine &<br>Health</span><br>Smartly.</h1>
+      <p class="hdesc">A complete health management system — add medicines, track vitals, view schedules, and never miss a dose. Built with real OOP concepts in C++.</p>
+      <div class="hbtns">
+        <button class="btn-g" onclick="go('medicine')">+ Add Medicine</button>
+        <button class="btn-o" onclick="go('health')">Log Health Data</button>
+      </div>
+    </div>
+    <div class="h3d-wrap fu">
+      <div class="h3d">
+        <div class="ch">
+          <span class="ct">Today's Medicines</span>
+          <span class="lb"><span class="ld"></span>Live</span>
+        </div>
+        <div class="mmi">
+          <div class="mm"><div class="mdc" style="background:#00ffcc"></div><div class="mif"><div class="mn">Paracetamol 500mg</div><div class="mt">🌅 Morning · 1 tablet</div></div><div class="mck" style="background:rgba(0,255,204,0.12);color:var(--c1)">✓</div></div>
+          <div class="mm"><div class="mdc" style="background:#0099ff"></div><div class="mif"><div class="mn">Vitamin D3</div><div class="mt">☀️ Afternoon · 1 capsule</div></div><div class="mck" style="border:1.5px solid rgba(255,255,255,0.12);color:var(--sub)">○</div></div>
+          <div class="mm"><div class="mdc" style="background:#7c3aed"></div><div class="mif"><div class="mn">Omega-3</div><div class="mt">🌙 Night · 2 tablets</div></div><div class="mck" style="border:1.5px solid rgba(255,255,255,0.12);color:var(--sub)">○</div></div>
+        </div>
+        <div class="cst">
+          <div class="cs"><div class="cv" id="hcm">0</div><div class="cl">Medicines</div></div>
+          <div class="cs"><div class="cv" id="hch">0</div><div class="cl">Records</div></div>
+          <div class="cs"><div class="cv">4</div><div class="cl">OOP Used</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="sbar">
+  <div class="si">
+    <div class="sb fu"><div class="sn" id="s1">0</div><div class="sl">Medicines Tracked</div></div>
+    <div class="sb fu"><div class="sn" id="s2">0</div><div class="sl">Health Records</div></div>
+    <div class="sb fu"><div class="sn" id="s3">0</div><div class="sl">Today's Doses</div></div>
+    <div class="sb fu"><div class="sn">4</div><div class="sl">OOP Concepts</div></div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section id="features" class="sec">
+  <div class="si2">
+    <div class="sh fu"><div class="stag">Key Features</div><h2 class="sh2">Everything In One Place</h2><p class="sp">Six powerful features to manage your complete health routine</p></div>
+    <div class="fg2">
+      <div class="fc fu" style="--fc:var(--c1)"><div class="fiw" style="background:rgba(0,255,204,0.09)">💊</div><h3>Medicine Manager</h3><p>Add medicines with name, dosage, frequency, timing, category, and duration. Full CRUD — view, update, delete anytime.</p></div>
+      <div class="fc fu" style="--fc:var(--c2)"><div class="fiw" style="background:rgba(0,153,255,0.09)">❤️</div><h3>Health Vitals Tracker</h3><p>Log blood pressure, sugar, weight, heart rate, oxygen level, temperature — with date, status, and notes.</p></div>
+      <div class="fc fu" style="--fc:var(--c3)"><div class="fiw" style="background:rgba(124,58,237,0.09)">📅</div><h3>Daily Schedule View</h3><p>See morning, afternoon, and night medicines at a glance — never get confused about timing.</p></div>
+      <div class="fc fu" style="--fc:var(--c5)"><div class="fiw" style="background:rgba(255,190,11,0.09)">📊</div><h3>Live Vitals Dashboard</h3><p>Real-time cards showing your latest Blood Pressure, Sugar, Weight, Heart Rate, Temp & Oxygen values.</p></div>
+      <div class="fc fu" style="--fc:var(--c4)"><div class="fiw" style="background:rgba(255,107,107,0.09)">🛡️</div><h3>Secure Local Storage</h3><p>All data stays on your device — no server, no login, no leaks. Private by design, always available offline.</p></div>
+      <div class="fc fu" style="--fc:var(--c1)"><div class="fiw" style="background:rgba(0,255,204,0.09)">📋</div><h3>Medicine Categories</h3><p>Tag medicines as Antibiotic, Painkiller, Vitamin, Antacid, BP, Diabetes, or Other for easy filtering.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- MEDICINE -->
+<section id="medicine" class="sec" style="padding-top:0">
+  <div class="si2">
+    <div class="sh fu"><div class="stag">Medicine Tracker</div><h2 class="sh2">Add & Manage Medicines</h2></div>
+    <div style="display:grid;grid-template-columns:1fr 1.1fr;gap:24px">
+      <div class="gc fw fu">
+        <div class="ft">💊 New Medicine</div>
+        <div class="fs">Fill in the details to track your medicine</div>
+        <div class="toast" id="mT">✅ Medicine added!</div>
+        <div class="fg"><label>Medicine Name *</label><input id="mN" placeholder="e.g. Paracetamol 500mg"></div>
+        <div class="fr">
+          <div class="fg"><label>Dosage</label><input id="mD" placeholder="e.g. 1 tablet"></div>
+          <div class="fg"><label>Frequency</label><select id="mF"><option>Once daily</option><option>Twice daily</option><option>Thrice daily</option><option>As needed</option></select></div>
+        </div>
+        <div class="fr">
+          <div class="fg"><label>Time of Day</label><select id="mTi"><option>Morning</option><option>Afternoon</option><option>Night</option><option>Anytime</option></select></div>
+          <div class="fg"><label>Duration (days)</label><input type="number" id="mDu" placeholder="e.g. 7" min="1"></div>
+        </div>
+        <div class="fg"><label>Category</label><select id="mC"><option>Antibiotic</option><option>Painkiller</option><option>Vitamin / Supplement</option><option>Antacid</option><option>Blood Pressure</option><option>Diabetes</option><option>Other</option></select></div>
+        <div class="fg"><label>Notes</label><textarea id="mNo" rows="2" placeholder="e.g. Take after meal, avoid dairy"></textarea></div>
+        <button class="sbtn" onclick="addMed()">+ Add Medicine</button>
+      </div>
+      <div class="gc rw fu">
+        <div class="rh"><div class="rht">📋 Medicine Records</div><div class="rbg" id="mBg">0 medicines</div></div>
+        <div class="rl" id="mL"><div class="empty"><div class="eico">💊</div>No medicines added yet</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HEALTH -->
+<section id="health" class="sec" style="padding-top:0">
+  <div class="si2">
+    <div class="sh fu"><div class="stag">Health Vitals</div><h2 class="sh2">Track Your Health</h2></div>
+    <div class="vg fu">
+      <div class="vc" style="--vb:rgba(255,107,107,0.22)"><div class="vi">🫀</div><div class="vn">Blood Pressure</div><div class="vv" id="vBP" style="color:var(--c4)">—</div><div class="vu">mmHg</div></div>
+      <div class="vc" style="--vb:rgba(255,190,11,0.22)"><div class="vi">🩸</div><div class="vn">Blood Sugar</div><div class="vv" id="vBS" style="color:var(--c5)">—</div><div class="vu">mg/dL</div></div>
+      <div class="vc" style="--vb:rgba(0,255,204,0.22)"><div class="vi">⚖️</div><div class="vn">Weight</div><div class="vv" id="vW" style="color:var(--c1)">—</div><div class="vu">kg</div></div>
+      <div class="vc" style="--vb:rgba(0,153,255,0.22)"><div class="vi">💓</div><div class="vn">Heart Rate</div><div class="vv" id="vHR" style="color:var(--c2)">—</div><div class="vu">bpm</div></div>
+      <div class="vc" style="--vb:rgba(124,58,237,0.22)"><div class="vi">🌡️</div><div class="vn">Temperature</div><div class="vv" id="vT" style="color:var(--c3)">—</div><div class="vu">°C</div></div>
+      <div class="vc" style="--vb:rgba(0,255,204,0.22)"><div class="vi">🫁</div><div class="vn">Oxygen Level</div><div class="vv" id="vO2" style="color:var(--c1)">—</div><div class="vu">SpO2 %</div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1.1fr;gap:24px">
+      <div class="gc fw fu">
+        <div class="ft">❤️ Log Health Record</div>
+        <div class="fs">Track your vitals and body metrics</div>
+        <div class="toast" id="hT">✅ Health record saved!</div>
+        <div class="fg"><label>Health Metric</label><select id="hTy"><option>Blood Pressure</option><option>Blood Sugar</option><option>Weight</option><option>Heart Rate</option><option>Temperature</option><option>Oxygen Level</option><option>Cholesterol</option><option>BMI</option></select></div>
+        <div class="fr">
+          <div class="fg"><label>Value *</label><input id="hV" placeholder="e.g. 120/80"></div>
+          <div class="fg"><label>Unit</label><input id="hU" placeholder="e.g. mmHg"></div>
+        </div>
+        <div class="fr">
+          <div class="fg"><label>Date</label><input type="date" id="hDt"></div>
+          <div class="fg"><label>Status</label><select id="hSt"><option>Normal</option><option>High</option><option>Low</option><option>Critical</option></select></div>
+        </div>
+        <div class="fg"><label>Notes</label><textarea id="hNo" rows="2" placeholder="After exercise, fasting, before bed..."></textarea></div>
+        <button class="sbtn" onclick="addHealth()">+ Save Record</button>
+      </div>
+      <div class="gc rw fu">
+        <div class="rh"><div class="rht">📊 Health Log</div><div class="rbg" id="hBg">0 records</div></div>
+        <div class="rl" id="hL"><div class="empty"><div class="eico">❤️</div>No health records yet</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section id="schedule" class="sec" style="padding-top:0">
+  <div class="si2">
+    <div class="sh fu"><div class="stag">Daily Schedule</div><h2 class="sh2">Today's Medicine Plan</h2><p class="sp">Your medicines organized by time of day</p></div>
+    <div class="sg fu">
+      <div class="sc" style="border-color:rgba(255,190,11,0.14)">
+        <div class="sch"><div class="sci" style="background:rgba(255,190,11,0.11)">🌅</div><div class="sct" style="color:var(--c5)">Morning</div></div>
+        <div id="sM"><div style="color:var(--muted);font-size:0.83rem;text-align:center;padding:18px">No morning medicines</div></div>
+      </div>
+      <div class="sc" style="border-color:rgba(0,153,255,0.14)">
+        <div class="sch"><div class="sci" style="background:rgba(0,153,255,0.11)">☀️</div><div class="sct" style="color:var(--c2)">Afternoon</div></div>
+        <div id="sA"><div style="color:var(--muted);font-size:0.83rem;text-align:center;padding:18px">No afternoon medicines</div></div>
+      </div>
+      <div class="sc" style="border-color:rgba(124,58,237,0.14)">
+        <div class="sch"><div class="sci" style="background:rgba(124,58,237,0.11)">🌙</div><div class="sct" style="color:var(--c3)">Night</div></div>
+        <div id="sN"><div style="color:var(--muted);font-size:0.83rem;text-align:center;padding:18px">No night medicines</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="sec" style="padding-top:0">
+  <div class="si2">
+    <div class="sh fu"><div class="stag">Process</div><h2 class="sh2">How It Works</h2></div>
+    <div class="hs">
+      <div class="step fu"><div class="snum">1</div><h3>Enter Details</h3><p>Type medicine name, dosage, time, category, and duration</p><div class="sarr">→</div></div>
+      <div class="step fu"><div class="snum">2</div><h3>Store Data</h3><p>Classes and objects save your data instantly via localStorage</p><div class="sarr">→</div></div>
+      <div class="step fu"><div class="snum">3</div><h3>View & Manage</h3><p>See all records, edit info, or delete entries anytime</p><div class="sarr">→</div></div>
+      <div class="step fu"><div class="snum">4</div><h3>Stay Healthy</h3><p>Daily schedule and vitals dashboard keep your routine solid</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- OOP -->
+<section id="oop" class="sec" style="padding-top:0">
+  <div class="si2">
+    <div class="sh fu"><div class="stag">C++ OOP Concepts</div><h2 class="sh2">Tech Behind the Project</h2><p class="sp">Real OOP concepts mapped to real project features</p></div>
+    <div class="og">
+      <div class="oc fu"><div class="oi">🏗️</div><h3>Classes & Objects</h3><p>Medicine and HealthRecord are classes. Every entry you add is an object — a real-world instance with its own data and methods.</p><div class="code"><span class="kw">class</span> <span class="cls">Medicine</span> {<br>&nbsp;&nbsp;string name, dosage, time;<br>&nbsp;&nbsp;<span class="kw">int</span> duration;<br>&nbsp;&nbsp;<span class="kw">void</span> display();<br>};<br><span class="cm">// Object creation:</span><br><span class="cls">Medicine</span> m1; m1.name = <span class="str">"Paracetamol"</span>;</div></div>
+      <div class="oc fu"><div class="oi">🧬</div><h3>Inheritance</h3><p>HealthRecord extends Medicine — inherits base properties while adding vitals-specific attributes like metric, unit, and status.</p><div class="code"><span class="kw">class</span> <span class="cls">HealthRecord</span> : <span class="kw">public</span> <span class="cls">Medicine</span> {<br>&nbsp;&nbsp;string metric;<br>&nbsp;&nbsp;string value, unit;<br>&nbsp;&nbsp;string date, status;<br>};</div></div>
+      <div class="oc fu"><div class="oi">🔒</div><h3>Encapsulation</h3><p>Private data members protect health info. Only class methods can read or modify them — data safety is built into the design.</p><div class="code"><span class="kw">private</span>:<br>&nbsp;&nbsp;string name;<br>&nbsp;&nbsp;<span class="kw">int</span> dosage;<br><span class="kw">public</span>:<br>&nbsp;&nbsp;string getName() {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> name;<br>&nbsp;&nbsp;}</div></div>
+      <div class="oc fu"><div class="oi">⚙️</div><h3>Operator Overloading</h3><p>The == operator is overloaded to compare two medicines — automatically prevents duplicate entries from being added.</p><div class="code"><span class="kw">bool</span> <span class="kw">operator</span>==(Medicine &m) {<br>&nbsp;&nbsp;<span class="kw">return</span> name == m.name;<br>}<br><span class="cm">// Usage:</span><br><span class="kw">if</span>(m1 == m2) cout &lt;&lt; <span class="str">"Duplicate!"</span>;</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FUTURE -->
+<section class="sec" style="padding-top:0">
+  <div class="si2">
+    <div class="sh fu"><div class="stag">Roadmap</div><h2 class="sh2">Future Improvements</h2></div>
+    <div class="fug">
+      <div class="fuc fu"><div class="fuci">🔔</div><h3>Push Notifications</h3><p>Real-time alerts to phone when medicine time hits</p></div>
+      <div class="fuc fu"><div class="fuci">📱</div><h3>Mobile App</h3><p>Native Android/iOS app for on-the-go tracking</p></div>
+      <div class="fuc fu"><div class="fuci">🩺</div><h3>Doctor Connect</h3><p>Share health records directly with your doctor or hospital</p></div>
+      <div class="fuc fu"><div class="fuci">📈</div><h3>Health Charts</h3><p>Visual trend graphs for all your vitals over time</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="flogo"><span>💊 MedTrack Pro</span></div>
+  <div class="divider"></div>
+  <div class="fcred">
+    Created by <strong>Md Aasif Raza</strong><br>
+    BCA Data Science &nbsp;·&nbsp; C++ Using OOPs
+    <span class="by">Built with HTML · CSS · JavaScript — OOP concepts demonstrated in C++</span>
+  </div>
+</footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
