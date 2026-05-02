@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MedTrack Pro — Medicine & Health Tracker</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="cursor"></div>
+  <div id="cring"></div>
+
+  <div class="bg-mesh">
+    <div class="mo mo1"></div>
+    <div class="mo mo2"></div>
+    <div class="mo mo3"></div>
+    <div class="mo mo4"></div>
+  </div>
+  <div class="bg-grid"></div>
+
+  <nav>
+    <div class="logo">
+      <div class="logo-ico">💊</div>
+      <div style="display:flex;flex-direction:column;gap:2px;">
+        <span>MedTrack & FitPro</span>
+        <a href="https://www.instagram.com/aasif__0.3/?hl=en" target="_blank" class="by-aasif" style="text-decoration:none;">👑 FOUNDER: AASIF</a>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#medicine">Medicine</a>
+      <a href="#health">Health</a>
+      <a href="#diet">Diet & Weight</a>
+      <a href="#fitness">Gym & Routine</a>
+    </div>
+    <div style="display:flex; gap:15px; align-items:center;">
+      <select id="theme-sel" onchange="changeTheme(this.value)" style="width:auto; padding:8px 12px; background:rgba(255,255,255,0.05); border-radius:8px; font-size:0.8rem; cursor:pointer; color:var(--text); border:1px solid rgba(255,255,255,0.1);">
+        <option value="violet">Deep Violet (Default)</option>
+        <option value="cyberpunk">Cyberpunk Matrix</option>
+        <option value="ocean">Ocean Blue</option>
+        <option value="sunset">Sunset Orange</option>
+        <option value="dracula">Dracula Dark</option>
+        <option value="emerald">Emerald Green</option>
+      </select>
+      <button class="nav-cta btn-prem" onclick="go('premium')">💎 Go Premium</button>
+    </div>
+  </nav>
+
+  <div class="page">
+
+    <!-- HERO -->
+    <section id="hero">
+      <div class="hi">
+        <div class="fu">
+          <a href="https://www.instagram.com/aasif__0.3/?hl=en" target="_blank" class="hero-tag insta-tag tilt-3d" style="text-decoration:none; display:inline-flex;">
+            <span class="tilt-inner" style="display:flex;align-items:center;gap:8px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="url(#ig-grad)"><linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433" /><stop offset="25%" stop-color="#e6683c" /><stop offset="50%" stop-color="#dc2743" /><stop offset="75%" stop-color="#cc2366" /><stop offset="100%" stop-color="#bc1888" /></linearGradient><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              Follow <strong style="color:#fff;">@aasif__0.3</strong>
+            </span>
+          </a>
+          <h1>Track Your<br><span class="hl2">Medicine &<br>Fitness</span><br>Smartly.</h1>
+          <p class="hdesc">A complete health management system — add medicines, track vitals, view schedules, and never
+            miss a dose. Built with real OOP concepts in C++.</p>
+          <div class="hbtns">
+            <button class="btn-g" onclick="go('medicine')">+ Add Medicine</button>
+            <button class="btn-o" onclick="go('health')">Log Health Data</button>
+          </div>
+        </div>
+        <div class="h3d-wrap fu">
+          <div class="h3d">
+            <div class="ch">
+              <span class="ct">Today's Medicines</span>
+              <span class="lb"><span class="ld"></span>Live</span>
+            </div>
+            <div class="mmi">
+              <div class="mm">
+                <div class="mdc" style="background:#00ffcc"></div>
+                <div class="mif">
+                  <div class="mn">Paracetamol 500mg</div>
+                  <div class="mt">🌅 Morning · 1 tablet</div>
+                </div>
+                <div class="mck" style="background:rgba(0,255,204,0.12);color:var(--c1)">✓</div>
+              </div>
+              <div class="mm">
+                <div class="mdc" style="background:#0099ff"></div>
+                <div class="mif">
+                  <div class="mn">Vitamin D3</div>
+                  <div class="mt">☀️ Afternoon · 1 capsule</div>
+                </div>
+                <div class="mck" style="border:1.5px solid rgba(255,255,255,0.12);color:var(--sub)">○</div>
+              </div>
+              <div class="mm">
+                <div class="mdc" style="background:#7c3aed"></div>
+                <div class="mif">
+                  <div class="mn">Omega-3</div>
+                  <div class="mt">🌙 Night · 2 tablets</div>
+                </div>
+                <div class="mck" style="border:1.5px solid rgba(255,255,255,0.12);color:var(--sub)">○</div>
+              </div>
+            </div>
+            <div class="cst">
+              <div class="cs">
+                <div class="cv" id="hcm">0</div>
+                <div class="cl">Medicines</div>
+              </div>
+              <div class="cs">
+                <div class="cv" id="hch">0</div>
+                <div class="cl">Records</div>
+              </div>
+              <div class="cs">
+                <div class="cv">4</div>
+                <div class="cl">OOP Used</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <div class="sbar">
+      <div class="si">
+        <div class="sb fu">
+          <div class="sn" id="s1">0</div>
+          <div class="sl">Medicines Tracked</div>
+        </div>
+        <div class="sb fu">
+          <div class="sn" id="s2">0</div>
+          <div class="sl">Health Records</div>
+        </div>
+        <div class="sb fu">
+          <div class="sn" id="s3">0</div>
+          <div class="sl">Today's Doses</div>
+        </div>
+        <div class="sb fu">
+          <div class="sn">4</div>
+          <div class="sl">OOP Concepts</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FEATURES -->
+    <section id="features" class="sec">
+      <div class="si2">
+        <div class="sh fu">
+          <div class="stag">Key Features</div>
+          <h2 class="sh2">Everything In One Place</h2>
+          <p class="sp">Six powerful features to manage your complete health routine</p>
+        </div>
+        <div class="fg2">
+          <div class="fc fu" style="--fc:var(--c1)">
+            <div class="fiw" style="background:rgba(0,255,204,0.09)">💊</div>
+            <h3>Medicine Manager</h3>
+            <p>Add medicines with name, dosage, frequency, timing, category, and duration. Full CRUD — view, update,
+              delete anytime.</p>
+          </div>
+          <div class="fc fu" style="--fc:var(--c2)">
+            <div class="fiw" style="background:rgba(0,153,255,0.09)">❤️</div>
+            <h3>Health Vitals Tracker</h3>
+            <p>Log blood pressure, sugar, weight, heart rate, oxygen level, temperature — with date, status, and notes.
+            </p>
+          </div>
+          <div class="fc fu" style="--fc:var(--c3)">
+            <div class="fiw" style="background:rgba(124,58,237,0.09)">📅</div>
+            <h3>Daily Schedule View</h3>
+            <p>See morning, afternoon, and night medicines at a glance — never get confused about timing.</p>
+          </div>
+          <div class="fc fu" style="--fc:var(--c5)">
+            <div class="fiw" style="background:rgba(255,190,11,0.09)">📊</div>
+            <h3>Live Vitals Dashboard</h3>
+            <p>Real-time cards showing your latest Blood Pressure, Sugar, Weight, Heart Rate, Temp & Oxygen values.</p>
+          </div>
+          <div class="fc fu" style="--fc:var(--c4)">
+            <div class="fiw" style="background:rgba(255,107,107,0.09)">🛡️</div>
+            <h3>Secure Local Storage</h3>
+            <p>All data stays on your device — no server, no login, no leaks. Private by design, always available
+              offline.</p>
+          </div>
+          <div class="fc fu" style="--fc:var(--c1)">
+            <div class="fiw" style="background:rgba(0,255,204,0.09)">📋</div>
+            <h3>Medicine Categories</h3>
+            <p>Tag medicines as Antibiotic, Painkiller, Vitamin, Antacid, BP, Diabetes, or Other for easy filtering.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEDICINE -->
+    <section id="medicine" class="sec" style="padding-top:0">
+      <div class="si2">
+        <div class="sh fu">
+          <div class="stag">Medicine Tracker</div>
+          <h2 class="sh2">Add & Manage Medicines</h2>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1.1fr;gap:24px">
+          <div class="gc fw fu">
+            <div class="ft">💊 New Medicine</div>
+            <div class="fs">Fill in the details to track your medicine</div>
+            <div class="toast" id="mT">✅ Medicine added!</div>
+            <div class="fg"><label>Medicine Name *</label><input id="mN" placeholder="e.g. Paracetamol 500mg"></div>
+            <div class="fr">
+              <div class="fg"><label>Dosage</label><input id="mD" placeholder="e.g. 1 tablet"></div>
+              <div class="fg"><label>Frequency</label><select id="mF">
+                  <option>Once daily</option>
+                  <option>Twice daily</option>
+                  <option>Thrice daily</option>
+                  <option>As needed</option>
+                </select></div>
+            </div>
+            <div class="fr">
+              <div class="fg"><label>Time of Day</label><select id="mTi">
+                  <option>Morning</option>
+                  <option>Afternoon</option>
+                  <option>Night</option>
+                  <option>Anytime</option>
+                </select></div>
+              <div class="fg"><label>Duration (days)</label><input type="number" id="mDu" placeholder="e.g. 7" min="1">
+              </div>
+            </div>
+            <div class="fg"><label>Category</label><select id="mC">
+                <option>Antibiotic</option>
+                <option>Painkiller</option>
+                <option>Vitamin / Supplement</option>
+                <option>Antacid</option>
+                <option>Blood Pressure</option>
+                <option>Diabetes</option>
+                <option>Other</option>
+              </select></div>
+            <div class="fg"><label>Notes</label><textarea id="mNo" rows="2"
+                placeholder="e.g. Take after meal, avoid dairy"></textarea></div>
+            <button class="sbtn" onclick="addMed()">+ Add Medicine</button>
+          </div>
+          <div class="gc rw fu">
+            <div class="rh">
+              <div class="rht">📋 Medicine Records</div>
+              <div class="rbg" id="mBg">0 medicines</div>
+            </div>
+            <div class="rl" id="mL">
+              <div class="empty">
+                <div class="eico">💊</div>No medicines added yet
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HEALTH -->
+    <section id="health" class="sec" style="padding-top:0">
+      <div class="si2">
+        <div class="sh fu">
+          <div class="stag">Health Vitals</div>
+          <h2 class="sh2">Track Your Health</h2>
+        </div>
+        <div class="vg fu">
+          <div class="vc" style="--vb:rgba(255,107,107,0.22)">
+            <div class="vi">🫀</div>
+            <div class="vn">Blood Pressure</div>
+            <div class="vv" id="vBP" style="color:var(--c4)">—</div>
+            <div class="vu">mmHg</div>
+          </div>
+          <div class="vc" style="--vb:rgba(255,190,11,0.22)">
+            <div class="vi">🩸</div>
+            <div class="vn">Blood Sugar</div>
+            <div class="vv" id="vBS" style="color:var(--c5)">—</div>
+            <div class="vu">mg/dL</div>
+          </div>
+          <div class="vc" style="--vb:rgba(0,255,204,0.22)">
+            <div class="vi">⚖️</div>
+            <div class="vn">Weight</div>
+            <div class="vv" id="vW" style="color:var(--c1)">—</div>
+            <div class="vu">kg</div>
+          </div>
+          <div class="vc" style="--vb:rgba(0,153,255,0.22)">
+            <div class="vi">💓</div>
+            <div class="vn">Heart Rate</div>
+            <div class="vv" id="vHR" style="color:var(--c2)">—</div>
+            <div class="vu">bpm</div>
+          </div>
+          <div class="vc" style="--vb:rgba(124,58,237,0.22)">
+            <div class="vi">🌡️</div>
+            <div class="vn">Temperature</div>
+            <div class="vv" id="vT" style="color:var(--c3)">—</div>
+            <div class="vu">°C</div>
+          </div>
+          <div class="vc" style="--vb:rgba(0,255,204,0.22)">
+            <div class="vi">🫁</div>
+            <div class="vn">Oxygen Level</div>
+            <div class="vv" id="vO2" style="color:var(--c1)">—</div>
+            <div class="vu">SpO2 %</div>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1.1fr;gap:24px">
+          <div class="gc fw fu">
+            <div class="ft">❤️ Log Health Record</div>
+            <div class="fs">Track your vitals and body metrics</div>
+            <div class="toast" id="hT">✅ Health record saved!</div>
+            <div class="fg"><label>Health Metric</label><select id="hTy">
+                <option>Blood Pressure</option>
+                <option>Blood Sugar</option>
+                <option>Weight</option>
+                <option>Heart Rate</option>
+                <option>Temperature</option>
+                <option>Oxygen Level</option>
+                <option>Cholesterol</option>
+                <option>BMI</option>
+              </select></div>
+            <div class="fr">
+              <div class="fg"><label>Value *</label><input id="hV" placeholder="e.g. 120/80"></div>
+              <div class="fg"><label>Unit</label><input id="hU" placeholder="e.g. mmHg"></div>
+            </div>
+            <div class="fr">
+              <div class="fg"><label>Date</label><input type="date" id="hDt"></div>
+              <div class="fg"><label>Status</label><select id="hSt">
+                  <option>Normal</option>
+                  <option>High</option>
+                  <option>Low</option>
+                  <option>Critical</option>
+                </select></div>
+            </div>
+            <div class="fg"><label>Notes</label><textarea id="hNo" rows="2"
+                placeholder="After exercise, fasting, before bed..."></textarea></div>
+            <button class="sbtn" onclick="addHealth()">+ Save Record</button>
+          </div>
+          <div class="gc rw fu">
+            <div class="rh">
+              <div class="rht">📊 Health Log</div>
+              <div class="rbg" id="hBg">0 records</div>
+            </div>
+            <div class="rl" id="hL">
+              <div class="empty">
+                <div class="eico">❤️</div>No health records yet
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIET & WEIGHT -->
+    <section id="diet" class="sec" style="padding-top:0">
+      <div class="si2">
+        <div class="sh fu tilt-3d">
+          <div class="stag tilt-inner">Diet & Goals</div>
+          <h2 class="sh2 tilt-inner-high">Weight Loss & Gain Planner</h2>
+          <p class="sp tilt-inner">Set your goals and get AI-powered diet suggestions.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1.1fr;gap:24px">
+          <div class="gc fw fu tilt-3d">
+            <div class="ft tilt-inner">🎯 Set Weight Goal</div>
+            <div class="fs tilt-inner">Select your primary fitness objective</div>
+            <div class="toast" id="dT">✅ Goal & Diet updated!</div>
+            <div class="fr tilt-inner">
+              <div class="fg"><label>Current Weight (kg)</label><input type="number" id="dWc" placeholder="e.g. 75"></div>
+              <div class="fg"><label>Target Weight (kg)</label><input type="number" id="dWt" placeholder="e.g. 70"></div>
+            </div>
+            <div class="fg tilt-inner"><label>Goal Type</label><select id="dGt">
+                <option value="loss">Weight Loss (Caloric Deficit)</option>
+                <option value="gain">Weight Gain (Caloric Surplus)</option>
+                <option value="maintain">Maintain Weight</option>
+              </select></div>
+            <div class="fg tilt-inner"><label>Diet Preference</label><select id="dDp">
+                <option>Vegetarian</option>
+                <option>Non-Vegetarian</option>
+                <option>Vegan</option>
+                <option>Keto</option>
+              </select></div>
+            <button class="sbtn tilt-inner" onclick="saveDietGoal()">Generate Diet Plan</button>
+          </div>
+          <div class="gc rw fu tilt-3d">
+            <div class="rh tilt-inner">
+              <div class="rht">🥗 Your Diet Plan & Tips</div>
+              <div class="rbg" id="dGbg">No Goal Set</div>
+            </div>
+            <div class="rl tilt-inner" id="dL" style="padding: 10px; color:var(--text); font-size:0.9rem; line-height:1.6;">
+              <div class="empty">
+                <div class="eico">🥑</div>Set your goal to get a diet plan
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GYM & PRO FITNESS (65% FOCUS) -->
+    <section id="fitness" class="sec" style="padding-top:0">
+      <div class="si2">
+        <div class="sh fu tilt-3d">
+          <div class="stag tilt-inner">FitPro Core</div>
+          <h2 class="sh2 tilt-inner-high">Advanced Gym & Workout Hub</h2>
+          <p class="sp tilt-inner">Track splits, calculate strength, and log intense workouts.</p>
+        </div>
+        
+        <!-- PRO GYM TOOLS -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px; margin-bottom:30px;">
+          <!-- 1RM Calculator -->
+          <div class="gc fw fu tilt-3d" style="background:rgba(255,42,95,0.05); border-color:rgba(255,42,95,0.2);">
+            <div class="ft tilt-inner">💪 1-Rep Max Calculator</div>
+            <div class="fs tilt-inner">Calculate your absolute strength limit</div>
+            <div class="fr tilt-inner">
+              <div class="fg"><label>Weight Lifted (kg)</label><input type="number" id="gW" placeholder="e.g. 80"></div>
+              <div class="fg"><label>Reps Completed</label><input type="number" id="gR" placeholder="e.g. 5"></div>
+            </div>
+            <button class="sbtn tilt-inner" onclick="calc1RM()">Calculate 1RM</button>
+            <div class="tilt-inner" id="g1Res" style="margin-top:15px; font-size:1.5rem; font-weight:800; color:var(--c4); text-align:center;">-- kg</div>
+          </div>
+
+          <!-- Workout Split Generator -->
+          <div class="gc fw fu tilt-3d" style="background:rgba(0,229,255,0.05); border-color:rgba(0,229,255,0.2);">
+            <div class="ft tilt-inner">🔥 Smart Workout Split</div>
+            <div class="fs tilt-inner">Get an AI-suggested weekly routine</div>
+            <div class="fg tilt-inner"><label>Days available per week</label><select id="gDays">
+                <option value="3">3 Days (Full Body)</option>
+                <option value="4">4 Days (Upper/Lower)</option>
+                <option value="5">5 Days (Bro Split)</option>
+                <option value="6">6 Days (Push/Pull/Legs)</option>
+              </select></div>
+            <button class="sbtn tilt-inner" onclick="genSplit()">Generate Split</button>
+            <div class="tilt-inner" id="gSpRes" style="margin-top:15px; font-size:0.85rem; color:var(--c3); font-weight:600; line-height:1.5;"></div>
+          </div>
+        </div>
+
+        <!-- Muscle Recovery Status -->
+        <div class="vg fu">
+          <div class="vc tilt-3d" style="--vb:rgba(255,42,95,0.22)">
+            <div class="tilt-inner"><div class="vi">🥩</div><div class="vn">Chest & Triceps</div><div id="mChest" style="font-size:0.75rem; color:var(--c1); margin-top:5px; font-weight:bold;">100% Recovered</div></div>
+          </div>
+          <div class="vc tilt-3d" style="--vb:rgba(0,229,255,0.22)">
+            <div class="tilt-inner"><div class="vi">🛡️</div><div class="vn">Back & Biceps</div><div id="mBack" style="font-size:0.75rem; color:var(--c1); margin-top:5px; font-weight:bold;">100% Recovered</div></div>
+          </div>
+          <div class="vc tilt-3d" style="--vb:rgba(139,61,255,0.22)">
+            <div class="tilt-inner"><div class="vi">🦵</div><div class="vn">Legs & Core</div><div id="mLegs" style="font-size:0.75rem; color:var(--c1); margin-top:5px; font-weight:bold;">100% Recovered</div></div>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:24px; margin-top:30px;">
+          <!-- Log Workout -->
+          <div class="gc fw fu tilt-3d">
+            <div class="ft tilt-inner">📝 Log Gym Session</div>
+            <div class="toast" id="rT">✅ Workout saved!</div>
+            <div class="fg tilt-inner"><label>Exercise / Routine</label><input id="rA" placeholder="e.g. Bench Press 4x8"></div>
+            <div class="fr tilt-inner">
+              <div class="fg"><label>Muscle Group</label><select id="rM">
+                  <option>Chest</option><option>Back</option><option>Legs</option><option>Arms</option><option>Shoulders</option><option>Cardio</option>
+                </select></div>
+              <div class="fg"><label>Intensity</label><select id="rI">
+                  <option>Warmup (RPE 5-6)</option><option>Moderate (RPE 7-8)</option><option>Failure (RPE 9-10)</option>
+                </select></div>
+            </div>
+            <button class="sbtn tilt-inner" onclick="addRoutine()">+ Log Workout</button>
+          </div>
+          <!-- Workout Log -->
+          <div class="gc rw fu tilt-3d">
+             <div class="rh tilt-inner">
+               <div class="rht">📅 Gym Log Book</div>
+               <div class="rbg" id="rBg">0 workouts</div>
+             </div>
+             <div class="rl tilt-inner" id="rL">
+               <div class="empty"><div class="eico">👟</div>No workouts logged</div>
+             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCHEDULE -->
+    <section id="schedule" class="sec" style="padding-top:0">
+      <div class="si2">
+        <div class="sh fu">
+          <div class="stag">Daily Schedule</div>
+          <h2 class="sh2">Today's Medicine Plan</h2>
+          <p class="sp">Your medicines organized by time of day</p>
+        </div>
+        <div class="sg fu">
+          <div class="sc" style="border-color:rgba(255,190,11,0.14)">
+            <div class="sch">
+              <div class="sci" style="background:rgba(255,190,11,0.11)">🌅</div>
+              <div class="sct" style="color:var(--c5)">Morning</div>
+            </div>
+            <div id="sM">
+              <div style="color:var(--muted);font-size:0.83rem;text-align:center;padding:18px">No morning medicines
+              </div>
+            </div>
+          </div>
+          <div class="sc" style="border-color:rgba(0,153,255,0.14)">
+            <div class="sch">
+              <div class="sci" style="background:rgba(0,153,255,0.11)">☀️</div>
+              <div class="sct" style="color:var(--c2)">Afternoon</div>
+            </div>
+            <div id="sA">
+              <div style="color:var(--muted);font-size:0.83rem;text-align:center;padding:18px">No afternoon medicines
+              </div>
+            </div>
+          </div>
+          <div class="sc" style="border-color:rgba(124,58,237,0.14)">
+            <div class="sch">
+              <div class="sci" style="background:rgba(124,58,237,0.11)">🌙</div>
+              <div class="sct" style="color:var(--c3)">Night</div>
+            </div>
+            <div id="sN">
+              <div style="color:var(--muted);font-size:0.83rem;text-align:center;padding:18px">No night medicines</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="sec" style="padding-top:0">
+      <div class="si2">
+        <div class="sh fu">
+          <div class="stag">Process</div>
+          <h2 class="sh2">How It Works</h2>
+        </div>
+        <div class="hs">
+          <div class="step fu">
+            <div class="snum">1</div>
+            <h3>Enter Details</h3>
+            <p>Type medicine name, dosage, time, category, and duration</p>
+            <div class="sarr">→</div>
+          </div>
+          <div class="step fu">
+            <div class="snum">2</div>
+            <h3>Store Data</h3>
+            <p>Classes and objects save your data instantly via localStorage</p>
+            <div class="sarr">→</div>
+          </div>
+          <div class="step fu">
+            <div class="snum">3</div>
+            <h3>View & Manage</h3>
+            <p>See all records, edit info, or delete entries anytime</p>
+            <div class="sarr">→</div>
+          </div>
+          <div class="step fu">
+            <div class="snum">4</div>
+            <h3>Stay Healthy</h3>
+            <p>Daily schedule and vitals dashboard keep your routine solid</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OOP -->
+    <section id="oop" class="sec" style="padding-top:0">
+      <div class="si2">
+        <div class="sh fu">
+          <div class="stag">C++ OOP Concepts</div>
+          <h2 class="sh2">Tech Behind the Project</h2>
+          <p class="sp">Real OOP concepts mapped to real project features</p>
+        </div>
+        <div class="og">
+          <div class="oc fu">
+            <div class="oi">🏗️</div>
+            <h3>Classes & Objects</h3>
+            <p>Medicine and HealthRecord are classes. Every entry you add is an object — a real-world instance with its
+              own data and methods.</p>
+            <div class="code"><span class="kw">class</span> <span class="cls">Medicine</span> {<br>&nbsp;&nbsp;string
+              name, dosage, time;<br>&nbsp;&nbsp;<span class="kw">int</span> duration;<br>&nbsp;&nbsp;<span
+                class="kw">void</span> display();<br>};<br><span class="cm">// Object creation:</span><br><span
+                class="cls">Medicine</span> m1; m1.name = <span class="str">"Paracetamol"</span>;</div>
+          </div>
+          <div class="oc fu">
+            <div class="oi">🧬</div>
+            <h3>Inheritance</h3>
+            <p>HealthRecord extends Medicine — inherits base properties while adding vitals-specific attributes like
+              metric, unit, and status.</p>
+            <div class="code"><span class="kw">class</span> <span class="cls">HealthRecord</span> : <span
+                class="kw">public</span> <span class="cls">Medicine</span> {<br>&nbsp;&nbsp;string
+              metric;<br>&nbsp;&nbsp;string value, unit;<br>&nbsp;&nbsp;string date, status;<br>};</div>
+          </div>
+          <div class="oc fu">
+            <div class="oi">🔒</div>
+            <h3>Encapsulation</h3>
+            <p>Private data members protect health info. Only class methods can read or modify them — data safety is
+              built into the design.</p>
+            <div class="code"><span class="kw">private</span>:<br>&nbsp;&nbsp;string name;<br>&nbsp;&nbsp;<span
+                class="kw">int</span> dosage;<br><span class="kw">public</span>:<br>&nbsp;&nbsp;string getName()
+              {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> name;<br>&nbsp;&nbsp;}</div>
+          </div>
+          <div class="oc fu">
+            <div class="oi">⚙️</div>
+            <h3>Operator Overloading</h3>
+            <p>The == operator is overloaded to compare two medicines — automatically prevents duplicate entries from
+              being added.</p>
+            <div class="code"><span class="kw">bool</span> <span class="kw">operator</span>==(Medicine &m)
+              {<br>&nbsp;&nbsp;<span class="kw">return</span> name == m.name;<br>}<br><span class="cm">//
+                Usage:</span><br><span class="kw">if</span>(m1 == m2) cout &lt;&lt; <span
+                class="str">"Duplicate!"</span>;</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FUTURE -->
+    <section class="sec" style="padding-top:0">
+      <div class="si2">
+        <div class="sh fu">
+          <div class="stag">Roadmap</div>
+          <h2 class="sh2">Future Improvements</h2>
+        </div>
+        <div class="fug">
+          <div class="fuc fu">
+            <div class="fuci">🔔</div>
+            <h3>Push Notifications</h3>
+            <p>Real-time alerts to phone when medicine time hits</p>
+          </div>
+          <div class="fuc fu">
+            <div class="fuci">📱</div>
+            <h3>Mobile App</h3>
+            <p>Native Android/iOS app for on-the-go tracking</p>
+          </div>
+          <div class="fuc fu">
+            <div class="fuci">🩺</div>
+            <h3>Doctor Connect</h3>
+            <p>Share health records directly with your doctor or hospital</p>
+          </div>
+          <div class="fuc fu">
+            <div class="fuci">📈</div>
+            <h3>Health Charts</h3>
+            <p>Visual trend graphs for all your vitals over time</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PREMIUM PRICING (SAAS MONETIZATION) -->
+    <section id="premium" class="sec" style="padding-top:0">
+      <div class="si2">
+        <div class="sh fu tilt-3d">
+          <div class="stag tilt-inner" style="color:#ffcc00;">Monetization Ready</div>
+          <h2 class="sh2 tilt-inner-high">Unlock <span style="color:#ffcc00;">FitPro Elite</span></h2>
+          <p class="sp tilt-inner">Take your health journey to the absolute peak with our AI premium features.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:30px;">
+          <!-- Free Plan -->
+          <div class="gc fw fu tilt-3d" style="background:rgba(255,255,255,0.02); display:flex; flex-direction:column;">
+            <div class="tilt-inner">
+              <div style="font-size:1.5rem; font-weight:700; margin-bottom:10px;">Starter Hub</div>
+              <div style="font-size:2.5rem; font-weight:800; font-family:'Clash Display'; margin-bottom:20px;">₹0<span style="font-size:1rem; color:var(--muted)">/mo</span></div>
+              <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:12px; margin-bottom:30px; font-size:0.95rem; color:var(--sub)">
+                <li>✅ Basic Medicine Tracker</li>
+                <li>✅ Vitals Logging (Local)</li>
+                <li>✅ Basic Diet Generation</li>
+                <li>✅ Routine Logging</li>
+              </ul>
+            </div>
+            <button class="btn-o tilt-inner" style="margin-top:auto; width:100%;">Current Plan</button>
+          </div>
+
+          <!-- Elite Plan -->
+          <div class="gc fw fu tilt-3d" style="background:linear-gradient(145deg, rgba(255,204,0,0.1), rgba(255,0,85,0.1)); border:1px solid rgba(255,204,0,0.4); box-shadow:0 0 40px rgba(255,204,0,0.15); display:flex; flex-direction:column; position:relative;">
+            <div class="tilt-inner-high" style="position:absolute; top:-15px; right:20px; background:#ffcc00; color:#000; font-size:0.7rem; font-weight:800; padding:6px 15px; border-radius:50px; text-transform:uppercase; box-shadow:0 10px 20px rgba(255,204,0,0.4);">Most Popular</div>
+            <div class="tilt-inner">
+              <div style="font-size:1.5rem; font-weight:700; margin-bottom:10px; color:#ffcc00;">FitPro Elite 👑</div>
+              <div style="font-size:2.5rem; font-weight:800; font-family:'Clash Display'; margin-bottom:20px; color:#fff;">₹499<span style="font-size:1rem; color:var(--muted)">/mo</span></div>
+              <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:12px; margin-bottom:30px; font-size:0.95rem; color:#fff">
+                <li>🔥 <strong>Cloud Sync</strong> across all devices</li>
+                <li>🔥 <strong>WhatsApp Integration:</strong> AI texts you your schedule</li>
+                <li>🔥 <strong>PDF Export:</strong> Send vitals direct to your Doctor</li>
+                <li>🔥 <strong>Advanced Gym Analytics:</strong> Hypertrophy tracking charts</li>
+                <li>🔥 <strong>1-on-1 Coach Access</strong></li>
+              </ul>
+            </div>
+            <button class="btn-g tilt-inner" style="margin-top:auto; width:100%; background:linear-gradient(135deg, #ffcc00, #ff0055); color:#fff; box-shadow:0 10px 30px rgba(255,0,85,0.4);">Upgrade Now</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="flogo"><span>💊 MedTrack Pro</span></div>
+      <div class="divider"></div>
+      <div class="fcred">
+        Created by <strong>Md Aasif Raza</strong><br>
+        BCA Data Science &nbsp;·&nbsp; C++ Using OOPs
+        <span class="by">Built with HTML · CSS · JavaScript — OOP concepts demonstrated in C++</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- AI CHATBOT -->
+  <div id="ai-bot">
+    <div id="ai-btn" onclick="toggleChat()">🤖</div>
+    <div id="ai-chat" class="glass-3d">
+      <div class="chat-head">
+        <div style="display:flex;align-items:center;gap:10px">
+          <div class="ai-avatar">🤖</div>
+          <div>
+            <div style="font-weight:700">MedAI Assistant</div>
+            <div style="font-size:0.7rem;color:var(--c1)">Online</div>
+          </div>
+        </div>
+        <button onclick="toggleChat()" style="background:none;border:none;color:var(--text);cursor:none;font-size:1.2rem">✕</button>
+      </div>
+      <div class="chat-body" id="cbod">
+        <div class="msg ai">Hello! I am MedAI. Ask me about your 'medicines' or 'vitals'!</div>
+      </div>
+      <div class="chat-foot">
+        <input type="text" id="ai-inp" placeholder="Type a message..." onkeypress="handleAI(event)">
+        <button onclick="sendAI()">➤</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
