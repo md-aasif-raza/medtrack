@@ -1540,6 +1540,12 @@ footer {
     transition-delay: 0.26s
 }
 
+/* Custom Grid Layouts */
+.grid-2c-diet { display: grid; grid-template-columns: 1fr 1.3fr; gap: 24px; }
+.grid-2c-gym { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 30px; }
+.grid-2c-log { display: grid; grid-template-columns: 1fr 1.2fr; gap: 24px; margin-top: 30px; }
+.grid-2c-prem { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+
 @media(max-width:1024px) {
     .hi {
         grid-template-columns: 1fr
@@ -1569,7 +1575,10 @@ footer {
 
 @media(max-width:768px) {
     nav {
-        padding: 0 18px
+        padding: 15px;
+        flex-direction: column;
+        height: auto;
+        gap: 15px;
     }
 
     .sec {
@@ -1598,8 +1607,12 @@ footer {
     .fg2,
     .hs,
     .fug,
-    .si {
-        grid-template-columns: 1fr
+    .si,
+    .grid-2c-diet,
+    .grid-2c-gym,
+    .grid-2c-log,
+    .grid-2c-prem {
+        grid-template-columns: 1fr !important;
     }
 
     .nav-links {
